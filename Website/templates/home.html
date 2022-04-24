@@ -47,6 +47,36 @@ display: block;
     suggest you the most relevant practise and meditation resources! Made with love by Shaikat Majumder :)</p>
 </div>
 
+<br>
+
+
+<h2 align="center"> My Mood Today</h2>
+
+<ul class="list-group list-group-flush" id="notes">
+    {% for note in user.notes %}
+    <li class="list-group-item">
+        {{note.data}}
+    <button type="button" class="close" onClick="deleteNote({{note.id}})">
+        <span aria-hidden="true">&times;</span>
+    </button>
+    </li>
+    {% endfor %}
+
+</ul>
+
+<br>
+
+<form method = "POST">
+    <textarea name = "note" id ="note" class = "form-control"></textarea>
+    <br>
+    <div align = "center">
+        <button type="submit" class="btn btn-primary"> Analyse Mood </button>
+    </div>
+</form>
+
+<br>
+
+
 </body>
 </html>
 
